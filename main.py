@@ -152,85 +152,86 @@
 #         for window in self.windows.values():
 #             if not window is win:
 #                 window.hide()
-from typing import Dict, Optional
+# from typing import Dict, Optional
+#
+# class WindowBase:
+#     def show(self) -> None:
+#         raise NotImplementedError()
+#
+#     def hide(self) -> None:
+#         raise NotImplementedError()
+#
+#
+# class MainWindow(WindowBase):
+#     def show(self) -> None:
+#         print('Show MainWindow')
+#
+#     def hide(self) -> None:
+#         print('Hide MainWindow')
+#
+#
+# class SettingWindow(WindowBase):
+#     def show(self) -> None:
+#         print('Show SettingWindow')
+#
+#     def hide(self) -> None:
+#         print('Hide SettingWindow')
+#
+#
+# class HelpWindow(WindowBase):
+#     def show(self) -> None:
+#         print('Show HelpWindow')
+#
+#     def hide(self) -> None:
+#         print('Hide HelpWindow')
+#
+#
+# class WindowMediator:
+#     def __init__(self) -> None:
+#         self.windows: Dict[str, Optional[WindowBase]] = {
+#             'main': None,
+#             'setting': None,
+#             'help': None
+#         }
+#
+#     def show(self, win: WindowBase) -> None:
+#         for window in self.windows.values():
+#             if window is not None and window is not win:
+#                 window.hide()
+#         win.show()
+#
+#     def set_main(self, win: MainWindow) -> None:
+#         self.windows['main'] = win
+#
+#     def set_setting(self, win: SettingWindow) -> None:
+#         self.windows['setting'] = win
+#
+#     def set_help(self, win: HelpWindow) -> None:
+#         self.windows['help'] = win
+#
+#
+# # Создаем окна
+# main_win = MainWindow()
+# setting_win = SettingWindow()
+# help_win = HelpWindow()
+#
+# # Создаем медиатор и устанавливаем окна
+# med = WindowMediator()
+# med.set_main(main_win)
+# med.set_setting(setting_win)
+# med.set_help(help_win)
+#
+# # Показать главное окно
+# main_win.show()  # Show MainWindow
+#
+# # Показать окно настроек
+# med.show(setting_win)
+# # Hide MainWindow
+# # Show SettingWindow
+#
+# # Показать окно помощи
+# med.show(help_win)
+# # Hide MainWindow
+# # Hide SettingWindow
+# # Show HelpWindow
 
-class WindowBase:
-    def show(self) -> None:
-        raise NotImplementedError()
-
-    def hide(self) -> None:
-        raise NotImplementedError()
-
-
-class MainWindow(WindowBase):
-    def show(self) -> None:
-        print('Show MainWindow')
-
-    def hide(self) -> None:
-        print('Hide MainWindow')
-
-
-class SettingWindow(WindowBase):
-    def show(self) -> None:
-        print('Show SettingWindow')
-
-    def hide(self) -> None:
-        print('Hide SettingWindow')
-
-
-class HelpWindow(WindowBase):
-    def show(self) -> None:
-        print('Show HelpWindow')
-
-    def hide(self) -> None:
-        print('Hide HelpWindow')
-
-
-class WindowMediator:
-    def __init__(self) -> None:
-        self.windows: Dict[str, Optional[WindowBase]] = {
-            'main': None,
-            'setting': None,
-            'help': None
-        }
-
-    def show(self, win: WindowBase) -> None:
-        for window in self.windows.values():
-            if window is not None and window is not win:
-                window.hide()
-        win.show()
-
-    def set_main(self, win: MainWindow) -> None:
-        self.windows['main'] = win
-
-    def set_setting(self, win: SettingWindow) -> None:
-        self.windows['setting'] = win
-
-    def set_help(self, win: HelpWindow) -> None:
-        self.windows['help'] = win
-
-
-# Создаем окна
-main_win = MainWindow()
-setting_win = SettingWindow()
-help_win = HelpWindow()
-
-# Создаем медиатор и устанавливаем окна
-med = WindowMediator()
-med.set_main(main_win)
-med.set_setting(setting_win)
-med.set_help(help_win)
-
-# Показать главное окно
-main_win.show()  # Show MainWindow
-
-# Показать окно настроек
-med.show(setting_win)
-# Hide MainWindow
-# Show SettingWindow
-
-# Показать окно помощи
-med.show(help_win)
-# Hide MainWindow
-# Hide SettingWindow
-# Show HelpWindow
